@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{20dbc995-02a7-4edd-bab0-34583d900df0}</ProjectGuid>
+    <ArchitectureToolsVersion>2.0.0.0</ArchitectureToolsVersion>
+    <Name>Kinoheld.DependencyValidation</Name>
+    <RootNamespace>Kinoheld.DependencyValidation</RootNamespace>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Validate Include="DependencyValidation.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="DependencyValidation.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>DependencyValidation.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="DependencyValidation.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>DependencyValidation.layerdiagram</DependentUpon>
+    </Validate>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Kinoheld.Application\Kinoheld.Application.csproj">
+      <Name>Kinoheld.Application</Name>
+      <Project>{f91fd8d8-9fda-41e4-ae28-d216ebbb4014}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Kinoheld.Base\Kinoheld.Base.csproj">
+      <Name>Kinoheld.Base</Name>
+      <Project>{c466f80c-cb25-4662-ae01-12d82a12b7ed}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Kinoheld.Domain.Model\Kinoheld.Domain.Model.csproj">
+      <Name>Kinoheld.Domain.Model</Name>
+      <Project>{dbfec48e-0201-452f-8d32-f13780b47d8a}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Kinoheld.Domain.Services.Abstractions\Kinoheld.Domain.Services.Abstractions.csproj">
+      <Name>Kinoheld.Domain.Services.Abstractions</Name>
+      <Project>{fef92e40-49e5-4273-afee-6c0f092287a1}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Kinoheld.Domain.Services\Kinoheld.Domain.Services.csproj">
+      <Name>Kinoheld.Domain.Services</Name>
+      <Project>{63ab5a3c-6c28-4f2b-9fe9-bb97fab711f5}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Kinoheld.Web\Kinoheld.Web.csproj">
+      <Name>Kinoheld.Web</Name>
+      <Project>{601fdd5a-ac3b-44f0-8cb9-e15e77ff4b78}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
+</Project>

@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  kinoheld.web:
+    image: kinoheldweb
+    build:
+      context: .
+      dockerfile: Kinoheld.Web/Dockerfile

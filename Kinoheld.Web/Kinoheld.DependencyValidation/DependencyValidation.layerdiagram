@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="0c507d54-82a7-4956-b0c9-0664076a2299" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <layers>
+    <layer Id="e7dd9f1b-c347-4b7a-bb09-3450f9518f0f" name="Kinoheld.Domain.Services.Abstractions">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="a83ce12f-cb23-48e7-9072-073faabf4f55" direction="Forward">
+          <layerMoniker Id="7d2d0057-160b-4752-8495-7624abd33a12" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <references>
+        <reference Id="5e7b68c5-eacb-42b1-bffa-9086a9d91c46" name="Kinoheld.Domain.Services.Abstractions">
+          <ArtifactNode Label="Kinoheld.Domain.Services.Abstractions" Category="CodeSchema_Project" Id="(Assembly=../Kinoheld.Domain.Services.Abstractions/Kinoheld.Domain.Services.Abstractions.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=Kinoheld.Domain.Services.Abstractions)" Label="Kinoheld.Domain.Services.Abstractions.dll" Category="CodeSchema_Assembly">
+            <Category Ref="FileSystem.Category.FileOfType.dll" />
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="7d2d0057-160b-4752-8495-7624abd33a12" name="Kinoheld.Domain.Model">
+      <references>
+        <reference Id="f59c80fb-1ceb-48df-ab18-e26282a6bcce" name="Kinoheld.Domain.Model">
+          <ArtifactNode Label="Kinoheld.Domain.Model" Category="CodeSchema_Project" Id="(Assembly=../Kinoheld.Domain.Model/Kinoheld.Domain.Model.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=Kinoheld.Domain.Model)" Label="Kinoheld.Domain.Model.dll" Category="CodeSchema_Assembly">
+            <Category Ref="FileSystem.Category.FileOfType.dll" />
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="f1f94e15-b51e-4eff-b8b4-8e6b8b549879" name="Kinoheld.Base">
+      <references>
+        <reference Id="055bfe24-8889-4cf2-94a4-1c9100c993fe" name="Kinoheld.Base">
+          <ArtifactNode Label="Kinoheld.Base" Category="CodeSchema_Project" Id="(Assembly=../Kinoheld.Base/Kinoheld.Base.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=Kinoheld.Base)" Label="Kinoheld.Base.dll" Category="CodeSchema_Assembly">
+            <Category Ref="FileSystem.Category.FileOfType.dll" />
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="7a9da9b4-66ac-4aa2-b4ba-21eed7a7ebdf" name="Kinoheld.Application">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="5f27bb2b-b174-4fda-aa3f-d4ebc2263fbd" direction="Forward">
+          <layerMoniker Id="e7dd9f1b-c347-4b7a-bb09-3450f9518f0f" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="fc7459d3-32c3-4251-bbf6-6ff9b7937bb2" direction="Forward">
+          <layerMoniker Id="372da3af-a2ce-4828-8785-0890dde96537" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="55c28a06-fb15-49d3-8ca9-f67c6ef5ff74" direction="Forward">
+          <layerMoniker Id="f1f94e15-b51e-4eff-b8b4-8e6b8b549879" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="2f42a692-c404-409d-8880-9539b5bb69d1" direction="Forward">
+          <layerMoniker Id="7d2d0057-160b-4752-8495-7624abd33a12" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <references>
+        <reference Id="80a262dd-cddc-48d7-8a25-191663f622c1" name="Kinoheld.Application">
+          <ArtifactNode Label="Kinoheld.Application" Category="CodeSchema_Project" Id="(Assembly=../Kinoheld.Application/Kinoheld.Application.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=Kinoheld.Application)" Label="Kinoheld.Application.dll" Category="CodeSchema_Assembly">
+            <Category Ref="FileSystem.Category.FileOfType.dll" />
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="372da3af-a2ce-4828-8785-0890dde96537" name="Kinoheld.Application.Abstractions">
+      <references>
+        <reference Id="c2b2047d-7643-423d-a3ac-a8e9db6ed4d5" name="Kinoheld.Application.Abstractions">
+          <ArtifactNode Label="Kinoheld.Application.Abstractions" Category="CodeSchema_Project" Id="(Assembly=../../Kinoheld.Application.Abstractions/Kinoheld.Application.Abstractions.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=Kinoheld.Application.Abstractions)" Label="Kinoheld.Application.Abstractions.dll" Category="CodeSchema_Assembly">
+            <Category Ref="FileSystem.Category.FileOfType.dll" />
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="056f0bda-0866-4f88-adc0-ff91569939e4" name="Kinoheld.Domain.Services">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="618d3f53-421f-44f0-9032-8881c19d5098" direction="Forward">
+          <layerMoniker Id="e7dd9f1b-c347-4b7a-bb09-3450f9518f0f" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="2d4cca86-71d0-4545-939d-d84ef3a1cfc2" direction="Forward">
+          <layerMoniker Id="f1f94e15-b51e-4eff-b8b4-8e6b8b549879" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="d35af84a-9cf0-4672-9750-1d316e50e899" direction="Forward">
+          <layerMoniker Id="7d2d0057-160b-4752-8495-7624abd33a12" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <references>
+        <reference Id="4a01cba3-b215-4537-afbd-215f4da336b7" name="Kinoheld.Domain.Services">
+          <ArtifactNode Label="Kinoheld.Domain.Services" Category="CodeSchema_Project" Id="(Assembly=../Kinoheld.Domain.Services/Kinoheld.Domain.Services.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=Kinoheld.Domain.Services)" Label="Kinoheld.Domain.Services.dll" Category="CodeSchema_Assembly">
+            <Category Ref="FileSystem.Category.FileOfType.dll" />
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="210de455-3156-4976-a0e9-d22aaf5b7817" name="Kinoheld.Web">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="6cef8846-53d2-45a0-bfe6-1b96e3cb60d7" direction="Forward">
+          <layerMoniker Id="372da3af-a2ce-4828-8785-0890dde96537" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="26e05fd5-ffc2-44d9-9c0a-16b5185593b0" direction="Forward">
+          <layerMoniker Id="f1f94e15-b51e-4eff-b8b4-8e6b8b549879" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <references>
+        <reference Id="2ad32035-a9aa-4cae-8540-5ca1220852d0" name="Kinoheld.Web">
+          <ArtifactNode Label="Kinoheld.Web" Category="CodeSchema_Project" Id="(Assembly=../Kinoheld.Web/Kinoheld.Web.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=Kinoheld.Web)" Label="Kinoheld.Web.dll" Category="CodeSchema_Assembly">
+            <Category Ref="FileSystem.Category.FileOfType.dll" />
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+  </layers>
+</layerModel>

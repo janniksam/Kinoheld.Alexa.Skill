@@ -1,0 +1,84 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2043
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{C40D1BED-1BE5-4B5F-8491-A390F58DD109}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kinoheld.Application", "Kinoheld.Application\Kinoheld.Application.csproj", "{F91FD8D8-9FDA-41E4-AE28-D216EBBB4014}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kinoheld.Base", "Kinoheld.Base\Kinoheld.Base.csproj", "{C466F80C-CB25-4662-AE01-12D82A12B7ED}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kinoheld.Domain.Services", "Kinoheld.Domain.Services\Kinoheld.Domain.Services.csproj", "{63AB5A3C-6C28-4F2B-9FE9-BB97FAB711F5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kinoheld.Domain.Model", "Kinoheld.Domain.Model\Kinoheld.Domain.Model.csproj", "{DBFEC48E-0201-452F-8D32-F13780B47D8A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kinoheld.Domain.Services.Abstractions", "Kinoheld.Domain.Services.Abstractions\Kinoheld.Domain.Services.Abstractions.csproj", "{FEF92E40-49E5-4273-AFEE-6C0F092287A1}"
+EndProject
+Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "Kinoheld.DependencyValidation", "Kinoheld.DependencyValidation\Kinoheld.DependencyValidation.modelproj", "{20DBC995-02A7-4EDD-BAB0-34583D900DF0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Validation", "Validation", "{3FCEBC9D-63C8-4287-BAAC-34BC9ACB5C2E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kinoheld.Application.Abstractions", "Kinoheld.Application.Abstractions\Kinoheld.Application.Abstractions.csproj", "{939D024F-528E-4FF1-846E-0EB907F26EE5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kinoheld.IoC", "Kinoheld.IoC\Kinoheld.IoC.csproj", "{8A0CBBE6-EE0A-477E-AC45-E36D90C608C1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kinoheld.Web", "Kinoheld.Web\Kinoheld.Web.csproj", "{601FDD5A-AC3B-44F0-8CB9-E15E77FF4B78}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C40D1BED-1BE5-4B5F-8491-A390F58DD109}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C40D1BED-1BE5-4B5F-8491-A390F58DD109}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C40D1BED-1BE5-4B5F-8491-A390F58DD109}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C40D1BED-1BE5-4B5F-8491-A390F58DD109}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F91FD8D8-9FDA-41E4-AE28-D216EBBB4014}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F91FD8D8-9FDA-41E4-AE28-D216EBBB4014}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F91FD8D8-9FDA-41E4-AE28-D216EBBB4014}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F91FD8D8-9FDA-41E4-AE28-D216EBBB4014}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C466F80C-CB25-4662-AE01-12D82A12B7ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C466F80C-CB25-4662-AE01-12D82A12B7ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C466F80C-CB25-4662-AE01-12D82A12B7ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C466F80C-CB25-4662-AE01-12D82A12B7ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63AB5A3C-6C28-4F2B-9FE9-BB97FAB711F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63AB5A3C-6C28-4F2B-9FE9-BB97FAB711F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63AB5A3C-6C28-4F2B-9FE9-BB97FAB711F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63AB5A3C-6C28-4F2B-9FE9-BB97FAB711F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBFEC48E-0201-452F-8D32-F13780B47D8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBFEC48E-0201-452F-8D32-F13780B47D8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBFEC48E-0201-452F-8D32-F13780B47D8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBFEC48E-0201-452F-8D32-F13780B47D8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FEF92E40-49E5-4273-AFEE-6C0F092287A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEF92E40-49E5-4273-AFEE-6C0F092287A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEF92E40-49E5-4273-AFEE-6C0F092287A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEF92E40-49E5-4273-AFEE-6C0F092287A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20DBC995-02A7-4EDD-BAB0-34583D900DF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20DBC995-02A7-4EDD-BAB0-34583D900DF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20DBC995-02A7-4EDD-BAB0-34583D900DF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20DBC995-02A7-4EDD-BAB0-34583D900DF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{939D024F-528E-4FF1-846E-0EB907F26EE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{939D024F-528E-4FF1-846E-0EB907F26EE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{939D024F-528E-4FF1-846E-0EB907F26EE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{939D024F-528E-4FF1-846E-0EB907F26EE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A0CBBE6-EE0A-477E-AC45-E36D90C608C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A0CBBE6-EE0A-477E-AC45-E36D90C608C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A0CBBE6-EE0A-477E-AC45-E36D90C608C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A0CBBE6-EE0A-477E-AC45-E36D90C608C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{601FDD5A-AC3B-44F0-8CB9-E15E77FF4B78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{601FDD5A-AC3B-44F0-8CB9-E15E77FF4B78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{601FDD5A-AC3B-44F0-8CB9-E15E77FF4B78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{601FDD5A-AC3B-44F0-8CB9-E15E77FF4B78}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{20DBC995-02A7-4EDD-BAB0-34583D900DF0} = {3FCEBC9D-63C8-4287-BAAC-34BC9ACB5C2E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C3C5D141-CFA0-4159-96CA-B99112E2C634}
+	EndGlobalSection
+EndGlobal
