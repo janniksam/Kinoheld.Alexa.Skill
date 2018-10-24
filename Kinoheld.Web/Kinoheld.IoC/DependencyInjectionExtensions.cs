@@ -32,6 +32,7 @@ namespace Kinoheld.IoC
             services.AddTransient<IIntent, GetOverviewDayIntent>();
             services.AddTransient<IIntent, ToggleEmailSettingsIntent>();
             services.AddTransient<IIntent, SetUserPreferencesIntent>();
+            services.AddTransient<IIntent, ResetUserPreferencesIntent>();
             
             services.AddTransient<IKinoheldService, KinoheldService>();
             services.AddTransient<IKinoheldDbAccess, KinoheldDbAccess>();

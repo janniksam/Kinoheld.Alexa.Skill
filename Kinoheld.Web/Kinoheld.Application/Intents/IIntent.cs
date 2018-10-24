@@ -8,6 +8,6 @@ namespace Kinoheld.Application.Intents
     {
         bool IsResponseFor(string intent);
 
-        Task<SkillResponse> GetResponse(SkillRequest request);
+        Task<SkillResponse> GetResponse(SkillRequest skillRequest);
     }
 }

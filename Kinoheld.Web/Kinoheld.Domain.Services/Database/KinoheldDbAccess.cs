@@ -103,6 +103,24 @@ namespace Kinoheld.Domain.Services.Database
             }
         }
 
+        public async Task DeleteUserPreferenceAsync(string userId)
+        {
+            using (var transaction = await m_context.Database.BeginTransactionAsync().ConfigureAwait(false))
+            {
+                var existantUser = await m_context.User.FirstOrDefaultAsync(p => p.AlexaId == userId).ConfigureAwait(false);
+                if (existantUser != null)
+                {
+                    m_context.User.Remove(existantUser);
+                    await m_context.SaveChangesAsync().ConfigureAwait(false);
+                    transaction.Commit();
+                }
+                else
+                {
+                    transaction.Rollback();
+                }
+            }
+        }
+
         private static void AddNewAssignment(KinoheldUser existantUser, string city, string cinemaJson)
         {
             existantUser.CityCinemaAssignments.Add(new CityCinemaAssignment

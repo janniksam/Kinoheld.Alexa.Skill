@@ -18,7 +18,7 @@
                 DayOverviewFormat = "<speak><p>Hier ist deine Übersicht zu {0}:</p>{1}</speak>",
 
                 UserPreferenceChanged = "Deine Stadt {0} wurde als Vorbelegung für zukünftige Anfragen erfolgreich übernommen!",
-                UserPreferencesResetted = "Ihre Benutzereinstellungen wurden erfolgreich zurückgesetzt!",
+                UserPreferencesResetted = "Deine Benutzereinstellungen wurden erfolgreich zurückgesetzt!",
                 UserPreferencesResetAbort = "OK. Komme wieder, wenn du es dir anders überlegst.",
 
                 EmailSubscribed = "Deine E-Mail-Einstellungen wurden erfolgreich geändert. Du wirst zukünftig wieder Nachrichten erhalten.",
