@@ -33,6 +33,7 @@ namespace Kinoheld.IoC
             services.AddTransient<IIntent, ToggleEmailSettingsIntent>();
             services.AddTransient<IIntent, SetUserPreferencesIntent>();
             services.AddTransient<IIntent, ResetUserPreferencesIntent>();
+            services.AddTransient<ICinemaDialogWorker, CinemaDialogWorker>();
             
             services.AddTransient<IKinoheldService, KinoheldService>();
             services.AddTransient<IKinoheldDbAccess, KinoheldDbAccess>();

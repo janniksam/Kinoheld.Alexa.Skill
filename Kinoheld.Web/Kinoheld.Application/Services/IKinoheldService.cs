@@ -10,6 +10,6 @@ namespace Kinoheld.Application.Services
     {
         Task<List<Cinema>> GetCinemas(string city);
 
-        Task<DayOverview> GetDayOverviewForCinema(Cinema cinema, DateTime showDate, string alexaChosenTime);
+        Task<DayOverview> GetDayOverviewForCinema(Cinema cinema, DateTime showDate, string daytime);
     }
 }

@@ -15,6 +15,8 @@ namespace Kinoheld.Application.Services
     {
         private const int TimeoutApiCallsMs = 500;
         private const int MaxRetriesApiCalls = 20;
+        private const int MaxDistance = 100;
+        private const int LimitCinema = 4;
 
         private static readonly SemaphoreSlim m_semaphoreSlim = new SemaphoreSlim(2, 2);
         private readonly ILogger<KinoheldService> m_logger;
@@ -38,14 +40,14 @@ namespace Kinoheld.Application.Services
             }
         }
 
-        public async Task<DayOverview> GetDayOverviewForCinema(Cinema cinema, DateTime showDate, string alexaChosenTime)
+        public async Task<DayOverview> GetDayOverviewForCinema(Cinema cinema, DateTime showDate, string daytime)
         {
             try
             {
                 var shows = await TaskRetryHelper.WithRetry(() => GetShowsFromApi(cinema, showDate), MaxRetriesApiCalls).ConfigureAwait(false);
 
                 m_logger.LogDebug("Parsing day overview");
-                var dayOverview = ParseDayOverview(cinema, shows, showDate, alexaChosenTime);
+                var dayOverview = ParseDayOverview(cinema, shows, showDate, daytime);
                 return dayOverview;
             }
             catch (TaskCanceledException e)
@@ -88,8 +90,8 @@ namespace Kinoheld.Application.Services
                 m_logger.LogDebug("Retrieving cinemas near selected city");
                 var cts = new CancellationTokenSource(TimeoutApiCallsMs);
                 var client = new KinoheldClient();
-                var cinemas = await client.GetCinemas(city, cancellationToken: cts.Token).ConfigureAwait(false);
-                return cinemas.ToList();
+                var cinemas = await client.GetCinemas(city, distance: MaxDistance, cancellationToken: cts.Token).ConfigureAwait(false);
+                return cinemas.Take(LimitCinema).ToList();
             }
             catch (Exception e)
             {
