@@ -25,6 +25,7 @@ namespace Kinoheld.IoC
             services.AddTransient<IAlexaHandler, AlexaHandler>();
             services.AddTransient<IIntentHandler, IntentHandler>();
             services.AddTransient<IStatusHandler, StatusHandler>();
+            services.AddTransient<IEmailSubscriptionHandler, EmailSubscriptionHandler>();
 
             services.AddTransient<IIntent, AmazonHelpIntent>();
             services.AddTransient<IIntent, AmazonStopIntent>();

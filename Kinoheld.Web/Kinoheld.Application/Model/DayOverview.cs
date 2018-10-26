@@ -11,6 +11,8 @@ namespace Kinoheld.Application.Model
             Movies = new List<Movie>();
         }
 
+        public string AlexaId { get; set; }
+
         public Cinema Cinema { get; set; }
 
         public DateTime Date { get; set; }

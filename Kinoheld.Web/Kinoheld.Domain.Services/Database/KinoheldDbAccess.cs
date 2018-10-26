@@ -121,6 +121,19 @@ namespace Kinoheld.Domain.Services.Database
             }
         }
 
+        public async Task UnsubscribeEmail(string alexaId)
+        {
+            using (var transaction = await m_context.Database.BeginTransactionAsync().ConfigureAwait(false))
+            {
+                var existantUser = await m_context.User.FirstOrDefaultAsync(p => p.AlexaId == alexaId)
+                    .ConfigureAwait(false);
+                existantUser.DisableEmails = true;
+
+                await m_context.SaveChangesAsync().ConfigureAwait(false);
+                transaction.Commit();
+            }
+        }
+
         private static void AddNewAssignment(KinoheldUser existantUser, string city, string cinemaJson)
         {
             existantUser.CityCinemaAssignments.Add(new CityCinemaAssignment

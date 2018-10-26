@@ -2,6 +2,7 @@
 using System.Text;
 using Kinoheld.Application.Model;
 using Kinoheld.Application.ResponseMessages;
+using Kinoheld.Base;
 using Kinoheld.Base.Formatter;
 
 namespace Kinoheld.Application.Formatter
@@ -9,7 +10,7 @@ namespace Kinoheld.Application.Formatter
     public class OverviewEmailFormatter : IEmailBodyFormatter<DayOverview>
     {
         private readonly IMessages m_messages;
-
+        
         public OverviewEmailFormatter(IMessages messages)
         {
             m_messages = messages;
@@ -41,7 +42,10 @@ namespace Kinoheld.Application.Formatter
                 builder.Append("</ul>");
             }
 
-            builder.Append($"<p>Diese E-Mail wurde automatisch generiert durch den Alexa-Skill &quot;{m_messages.SkillName}&quot;.</p><p>Um zukünftig keine E-Mails mehr zu erhalten, kannst du dem Skill sagen: \"Alexa sage {m_messages.InvocationName}, Email-Einstellungen ändern.\"</p></html>");
+            var unsubscibeUrl = string.Format(Constants.BaseUnsubscribeUrlFormat, overview.AlexaId);
+            builder.AppendLine($"<p>Diese E-Mail wurde automatisch generiert durch den Alexa-Skill &quot;{m_messages.SkillName}&quot;.</p>");
+            builder.Append($"<p>Um zukünftig keine E-Mails mehr zu erhalten, kannst du dem Skill sagen: \"Alexa sage {m_messages.InvocationName}, Email-Einstellungen ändern.\".<br/>");
+            builder.Append($"Alternativ klicke auf folgenden Link: <a href='{unsubscibeUrl}'>Emails abbestellen</a></p></html>");
 
             return builder.ToString();
         }

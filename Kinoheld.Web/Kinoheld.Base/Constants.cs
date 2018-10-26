@@ -1,7 +1,9 @@
 ﻿namespace Kinoheld.Base
 {
-    public class Constants
+    public static class Constants
     {
+        public const string BaseUnsubscribeUrlFormat = "https://jannik-kowalzik.de/kinoheld/api/emailsubscription?alexaId={0}";
+
         public static class Intents
         {
             //Basic stuff

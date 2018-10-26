@@ -16,5 +16,7 @@ namespace Kinoheld.Domain.Services.Abstractions.Database
         Task SaveCityPreferenceAsync(string userId, string city);
 
         Task DeleteUserPreferenceAsync(string userId);
+
+        Task UnsubscribeEmail(string alexaId);
     }
 }

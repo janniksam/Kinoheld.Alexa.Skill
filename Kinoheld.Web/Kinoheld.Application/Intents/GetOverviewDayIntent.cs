@@ -82,9 +82,10 @@ namespace Kinoheld.Application.Intents
             if (user != null && !user.DisableEmails)
             {
                 m_logger.LogDebug("Sending email");
+                dayOverview.AlexaId = session.User.UserId;
                 SendEmailAsync(context, dayOverview);
             }
-
+            
             m_logger.LogDebug("Formatting day overview for Alexa");
             var result = m_dayOverviewSsmlFormatter.Format(dayOverview);
             return ResponseBuilder.Tell(new SsmlOutputSpeech
