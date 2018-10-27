@@ -15,8 +15,8 @@ namespace Kinoheld.Application.Services
     {
         private const int TimeoutApiCallsMs = 500;
         private const int MaxRetriesApiCalls = 20;
-        private const int MaxDistance = 100;
-        private const int LimitCinema = 4;
+        private const int MaxDistanceCinemaSearch = 100;
+        private const int LimitCinemaSearch = 5;
 
         private static readonly SemaphoreSlim m_semaphoreSlim = new SemaphoreSlim(2, 2);
         private readonly ILogger<KinoheldService> m_logger;
@@ -90,8 +90,8 @@ namespace Kinoheld.Application.Services
                 m_logger.LogDebug("Retrieving cinemas near selected city");
                 var cts = new CancellationTokenSource(TimeoutApiCallsMs);
                 var client = new KinoheldClient();
-                var cinemas = await client.GetCinemas(city, distance: MaxDistance, cancellationToken: cts.Token).ConfigureAwait(false);
-                return cinemas.Take(LimitCinema).ToList();
+                var cinemas = await client.GetCinemas(city, distance: MaxDistanceCinemaSearch, limit: LimitCinemaSearch, cancellationToken: cts.Token).ConfigureAwait(false);
+                return cinemas.ToList();
             }
             catch (Exception e)
             {

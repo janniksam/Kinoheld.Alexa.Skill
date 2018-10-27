@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Alexa.NET.Request;
+using Kinoheld.Application.Model;
 using Kinoheld.Domain.Model.Model;
 
 namespace Kinoheld.Application.Services

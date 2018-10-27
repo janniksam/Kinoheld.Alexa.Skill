@@ -13,7 +13,7 @@
 
   <ItemGroup>
     <PackageReference Include="Alexa.NET" Version="1.5.5-pre" />
-    <PackageReference Include="Kinoheld.Api.Client" Version="1.0.19-alpha" />
+    <PackageReference Include="Kinoheld.Api.Client" Version="1.1.0-alpha" />
     <PackageReference Include="Microsoft.DependencyValidation.Analyzers" Version="0.9.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.1.1" />
     <PackageReference Include="Microsoft.Extensions.Logging" Version="2.1.1" />

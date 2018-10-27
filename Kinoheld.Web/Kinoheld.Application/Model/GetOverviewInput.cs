@@ -1,8 +1,9 @@
 ﻿using System;
+using System.Linq;
 using Alexa.NET.Response;
 using Kinoheld.Api.Client.Model;
 
-namespace Kinoheld.Application.Services
+namespace Kinoheld.Application.Model
 {
     public class GetOverviewInput
     {
@@ -15,5 +16,11 @@ namespace Kinoheld.Application.Services
         public Cinema SelectedCinema { get; set; }
 
         public string SelectedCity { get; set; }
+
+        public bool IsZipCode()
+        {
+            return SelectedCity != null &&
+                   SelectedCity.All(char.IsNumber);
+        }
     }
 }

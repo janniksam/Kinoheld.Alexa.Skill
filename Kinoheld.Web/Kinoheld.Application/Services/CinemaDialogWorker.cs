@@ -9,6 +9,7 @@ using Alexa.NET.Request.Type;
 using Alexa.NET.Response;
 using Kinoheld.Api.Client.Model;
 using Kinoheld.Application.Extensions;
+using Kinoheld.Application.Model;
 using Kinoheld.Application.ResponseMessages;
 using Kinoheld.Base;
 using Kinoheld.Base.Utils;
@@ -239,14 +240,14 @@ namespace Kinoheld.Application.Services
         private static SkillResponse GetResponseCinemaSelection(GetOverviewInput input, IReadOnlyList<Cinema> kinos)
         {
             string outputText;
-            if (input.SelectedCity.All(char.IsNumber))
+            if (input.IsZipCode())
             {
                 var plzSplitted = string.Join(" ", Regex.Matches(input.SelectedCity, @"\d{1}"));
                 outputText = $"<speak><p>Folgende Kinos wurden in der Nähe von {plzSplitted} gefunden:</p><p>";
             }
             else
             {
-                outputText = $"<speak><p>Folgende Kinos wurden in der Nähe von {input?.SelectedCity} gefunden:</p><p>";
+                outputText = $"<speak><p>Folgende Kinos wurden in der Nähe von {input.SelectedCity} gefunden:</p><p>";
             }
 
             for (var i = 0; i < kinos.Count; i++)
@@ -266,8 +267,17 @@ namespace Kinoheld.Application.Services
 
         private SkillResponse GetResponseCinemaSaveToPreference(GetOverviewInput input, Session oldSession)
         {
-            var outputText =
-                $"<speak><p>Sie haben {input?.SelectedCinema?.Name} gewählt.</p><p>Wollen Sie dieses Kino für die Stadt {input?.SelectedCity} zukünftig immer nutzen?</p></speak>";
+            string outputText;
+            if (input.IsZipCode())
+            {
+                var plzSplitted = string.Join(" ", Regex.Matches(input.SelectedCity, @"\d{1}"));
+                outputText = $"<speak><p>Sie haben {input?.SelectedCinema?.Name} gewählt.</p><p>Wollen Sie dieses Kino für {plzSplitted} zukünftig immer nutzen?</p></speak>";
+            }
+            else
+            {
+                outputText = $"<speak><p>Sie haben {input.SelectedCinema?.Name} gewählt.</p><p>Wollen Sie dieses Kino für die Stadt {input.SelectedCity} zukünftig immer nutzen?</p></speak>";
+            }
+               
 
             return ResponseBuilder.DialogElicitSlot(
                 new SsmlOutputSpeech { Ssml = outputText },
