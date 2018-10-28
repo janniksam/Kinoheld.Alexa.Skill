@@ -127,11 +127,17 @@ namespace Kinoheld.Application.Services
             var filmGroup = showsOnDate.GroupBy(p => p.MovieInfo.Id);
             foreach (var movieGroup in filmGroup)
             {
+                var movieInfo = movieGroup.First().MovieInfo;
                 var movie = new Movie
                 {
-                    Name = FormatMovieName(movieGroup.First().MovieInfo.Title)
+                    Name = FormatMovieName(movieInfo.Title),
+                    Description = movieInfo.Description,
                 };
-
+                if (movieInfo.ThumbnailImage != null && movieInfo.ThumbnailImage.Length > 0)
+                {
+                    movie.ThumbnailUrl = movieInfo.ThumbnailImage[0].Url?.AbsoluteUrl;
+                }
+                
                 foreach (var movieVorstellung in movieGroup)
                 {
                     var showTime = movieVorstellung.Beginning.GetDateTime().ToLocalTime();

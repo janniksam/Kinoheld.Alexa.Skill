@@ -11,6 +11,10 @@ namespace Kinoheld.Application.Model
 
         public string Name { get; set; }
 
+        public string Description { get; set; }
+
+        public string ThumbnailUrl { get; set; }
+
         public List<Vorstellung> Vorstellungen { get; }
     }
 }
