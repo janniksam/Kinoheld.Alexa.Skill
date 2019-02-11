@@ -6,15 +6,18 @@
         {
             var deDeResource = new Messages("de-de")
             {
-                SkillName = "Kinoheld",
-                InvocationName = "Kino Held",
+                SkillName = "Kino Vorschau",
+                InvocationName = "Kino Vorschau",
                 HelpMessage =
                     "Ich kann dir eine Übersicht zu anstehenden Vorstellungen eines beliebigen Kinos geben. " +
-                    "Frage mich zum Beispiel: Alexa frage Kino Held was läuft im Kino. " +
-                    "Ein weiteres Beispiel: Alexa, frage Kino Held, was heute abend im Kino Aurich läuft.",
+                    "Frage mich zum Beispiel: Alexa frage Kino Vorschau was läuft im Kino. " +
+                    "Ein weiteres Beispiel: Alexa, frage Kino Vorschau, was heute abend im Kino Aurich läuft.",
                 StopMessage = "Bis bald!",
-                Launch = "Kino Held wurde gestartet. Wie kann ich weiterhelfen?",
-                
+
+                Launch = "Kino Vorschau wurde gestartet. " +
+                         "Du kannst mich nach einer Übersicht zu einem bestimmten Kino und einem bestimmten Datum fragen. " +
+                         "Frage jetzt einfach: Was läuft im Kino.",
+
                 DayOverviewFormat = "<speak><p>Hier ist deine Übersicht zu {0}:</p>{1}</speak>",
 
                 UserPreferenceChanged = "Deine Stadt {0} wurde als Vorbelegung für zukünftige Anfragen erfolgreich übernommen!",
