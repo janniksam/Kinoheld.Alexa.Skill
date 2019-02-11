@@ -21,7 +21,7 @@ namespace Kinoheld.IoC
     {
         public static void RegisterDependencies(this IServiceCollection services, string connectionString)
         {
-            services.AddDbContext<KinoheldDbContext>(p => p.UseMySQL(connectionString));
+            services.AddDbContext<KinoheldDbContext>(p => p.UseMySql(connectionString));
             services.AddTransient<IAlexaHandler, AlexaHandler>();
             services.AddTransient<IIntentHandler, IntentHandler>();
             services.AddTransient<IStatusHandler, StatusHandler>();
