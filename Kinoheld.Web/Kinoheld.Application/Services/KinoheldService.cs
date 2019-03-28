@@ -135,7 +135,7 @@ namespace Kinoheld.Application.Services
                 };
                 if (movieInfo.ThumbnailImage != null && movieInfo.ThumbnailImage.Length > 0)
                 {
-                    movie.ThumbnailUrl = movieInfo.ThumbnailImage[0].Url?.AbsoluteUrl;
+                    movie.ThumbnailUrl = movieInfo.ThumbnailImage[0].Url;
                 }
                 
                 foreach (var movieVorstellung in movieGroup)
