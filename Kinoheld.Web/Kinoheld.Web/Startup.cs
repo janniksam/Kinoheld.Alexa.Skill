@@ -38,7 +38,7 @@ namespace Kinoheld.Web
             var kinoheldConnectionString = Configuration[Secrets.KinoheldConnectionstringKey];
             if (string.IsNullOrEmpty(kinoheldConnectionString))
             {
-                throw new ConfigurationErrorsException(
+                throw new ArgumentOutOfRangeException(Secrets.KinoheldConnectionstringKey,
                     $"The secret \"{Secrets.KinoheldConnectionstringKey}\" has to be set properly.");
             }
 

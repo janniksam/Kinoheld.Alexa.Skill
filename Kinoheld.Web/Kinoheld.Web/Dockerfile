@@ -1,18 +1,18 @@
-FROM microsoft/aspnetcore:2.0 AS base
+FROM microsoft/dotnet:2.2-aspnetcore-runtime AS base
 WORKDIR /app
 EXPOSE 80
+EXPOSE 443
 
-FROM microsoft/aspnetcore-build:2.0 AS build
+FROM microsoft/dotnet:2.2-sdk AS build
 WORKDIR /src
-COPY Kinoheld.Web.sln ./
-COPY Kinoheld.Web/Kinoheld.Web.csproj Kinoheld.Web/
-RUN dotnet restore -nowarn:msb3202,nu1503
+COPY ["Kinoheld.Web/Kinoheld.Web.csproj", "Kinoheld.Web/"]
+RUN dotnet restore "Kinoheld.Web/Kinoheld.Web.csproj"
 COPY . .
-WORKDIR /src/Kinoheld.Web
-RUN dotnet build -c Release -o /app
+WORKDIR "/src/Kinoheld.Web"
+RUN dotnet build "Kinoheld.Web.csproj" -c Release -o /app
 
 FROM build AS publish
-RUN dotnet publish -c Release -o /app
+RUN dotnet publish "Kinoheld.Web.csproj" -c Release -o /app
 
 FROM base AS final
 WORKDIR /app
